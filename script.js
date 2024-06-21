@@ -15,6 +15,24 @@ gsap.to(".navbar",{
 
 });
 
+gsap.to(".resnav",{
+
+    backgroundColor : "black",
+    duration : 0.5,
+    height: "110px",
+    scrollTrigger:{
+
+        trigger : ".resnav",
+        scroller : "body",
+        markers : false,
+        start : "top -10%",
+        end : "top -11%",
+        scrub : 1
+    }
+
+});
+
+
 gsap.to(".main",{
 
     backgroundColor : "black",
@@ -130,6 +148,35 @@ btn3.addEventListener("click", function() {
     btn2.style.backgroundColor = "white";
     btn3.style.backgroundColor = "#9dcb1f";
    })
+
+var menu = document.querySelector(".resnav i");
+var links = document.querySelector(".links")
+
+var c = 0;
+
+menu.addEventListener("click", function(){
+
+    if(c==0){
+        
+        links.style.display = "flex";
+        c=1;
+    }
+    else{
+
+        links.style.display = "none";
+        c=0;
+    }
+    
+
+})
+
+gsap.to(".links h4", {
+    duration: 0.2,
+    opacity: 1,
+    y: 0,
+    stagger: 0.9,
+    ease: "easeIn"
+});
 
    
    
